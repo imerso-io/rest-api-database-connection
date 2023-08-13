@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    container_name: restAPI-ino
+    environment:
+      POSTGRES_PASSWORD: "restAPI-ino"
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+    networks:
+      - restAPI-network
+
+networks:
+  restAPI-network:
+
+volumes:
+  restAPI-volume:
